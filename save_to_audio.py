@@ -64,4 +64,4 @@ with open(metadata_path, mode="w", encoding="utf-8", newline="") as f:
         torchaudio.save(wav_file_path, waveform_resampled_tensor, 16000)
 
         # Write metadata line
-        # writer.writerow([os.path.splitext(wav_file_name)[0], text])
+        writer.writerow([os.path.splitext(wav_file_name)[0], text])
