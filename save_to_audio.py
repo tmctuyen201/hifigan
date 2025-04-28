@@ -34,6 +34,7 @@ with open(metadata_path, mode="w", encoding="utf-8", newline="") as f:
         text = sample["transcription"]
         if text == "♪" or text == "[Music]" or text == "*Music*":
             continue
+        text = text.replace(";", "").replace("@", "").replace("/", "").replace("\"", "").replace("?", "").replace("!", "").replace("[", "").replace(")", "").replace("(", "").replace("*", "")
         if isinstance(waveform, np.ndarray):
             waveform = torch.tensor(waveform).float()
         if waveform.ndimension() == 1:
